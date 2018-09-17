@@ -1,1 +1,1 @@
-# JQuery-carousel
+https://dominikdon.github.io/JQuery-carousel/
