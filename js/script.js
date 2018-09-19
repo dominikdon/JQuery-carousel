@@ -1,4 +1,5 @@
 $(function(){
+var interval;
 var carouselList = $('#carousel ul');
   
 function moveFirstSlide(){
@@ -16,15 +17,16 @@ function moveLastSlide(){
   };  
 
 function changeSlideRight(){
-    carouselList.animate({'marginLeft':-600}, 600, moveFirstSlide);  
+    carouselList.animate({'marginLeft':-600}, 600, moveFirstSlide);
     };
   
 function changeSlideLeft(){
-    carouselList.animate({'marginLeft':0}, 600, moveLastSlide)
+    moveLastSlide();
+    carouselList.animate({'marginLeft':0}, 600)
     };
-  
+
 var timer = function(){
-    interval = setInterval(changeSlideRight, 3000);
+     interval = setInterval(changeSlideRight, 3000);
 };
   
 timer();
@@ -39,5 +41,5 @@ $(".previous").click(function(){
     clearInterval(interval);
     changeSlideRight();
     timer()
-  });
+ });
 });
